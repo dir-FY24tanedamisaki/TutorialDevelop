@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.techacademy.entity.User;
 import com.techacademy.repository.UserRepository;
 
+
 @Service
 
 public class UserService {
@@ -19,6 +20,12 @@ public class UserService {
     public List<User> getUserList(){
         //リポジトリのFindAllメソッドを呼び出す
         return userRepository.findAll();
+        
+    }
+    
+    //Userを1件検索して返す
+    public User getUser(Integer id) {
+        return userRepository.findById(id).get();
     }
     
     //Userの登録
